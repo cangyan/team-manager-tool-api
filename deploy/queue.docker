@@ -1,4 +1,4 @@
 FROM cangyan/php7-lumen
 
-WORKDIR /var/www
-CMD ["/bin/sh", "./docker/queue.sh"]
+WORKDIR /var/www/api/
+CMD ["/bin/sh", "../deploy/queue.sh"]
