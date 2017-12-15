@@ -48,6 +48,10 @@ $app->singleton(
     App\Console\Kernel::class
 );
 
+if (class_exists(\Vluzrmos\Tinker\TinkerServiceProvider::class)) {
+    $app->register(\Vluzrmos\Tinker\TinkerServiceProvider::class);
+}
+
 /*
 |--------------------------------------------------------------------------
 | Register Middleware
@@ -98,5 +102,8 @@ $app->router->group([
 ], function ($router) {
     require __DIR__.'/../routes/web.php';
 });
+
+$app->withFacades();
+$app->withEloquent();
 
 return $app;
